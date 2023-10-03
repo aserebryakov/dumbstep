@@ -1,14 +1,16 @@
 enable_testing()
 
 add_executable(
-  hello_test
+  dumbstep_test 
   hello_test.cc
 )
+
+target_include_directories(dumbstep_test PRIVATE ../include)
+
 target_link_libraries(
-  hello_test
+  dumbstep_test
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test)
-
+gtest_discover_tests(dumbstep_test)
